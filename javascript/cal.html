@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+          table{
+            margin: 250px auto;
+            background-color: azure;
+          }
+        
+        button{
+            width:100%;
+        
+        }
+        button
+        {
+            background-color: black;
+            color:white;
+            font-size: 2em;
+            
+
+        }
+        input[type="text"]
+        {
+            font-size: 2em;
+            padding: 2px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="con">
+        <table id="cal">
+            <tr>
+               <td colspan="3"><input type="text" id="result" placeholder="0"></td> 
+               <td><button  onclick="cl()">C</button></td>
+            </tr>
+            <tr>
+            <td><button onclick="display('1')"  onkeydown="myFunction(event)">1</button></td>
+            <td><button onclick="display('2')" onkeydown="myFunction(event)" >2</button></td>
+            <td><button  onclick="display('3')"  onkeydown="myFunction(event)">3</button></td>
+            <td><button onclick="display('/')"  onkeydown="myFunction(event)">/</button></td>
+            </tr>
+    
+            <tr>
+                <td><button onclick="display('4')"  onkeydown="myFunction(event)">4</button></td>
+                <td><button onclick="display('5')"  onkeydown="myFunction(event)">5</button></td>
+                <td><button onclick="display('6')"  onkeydown="myFunction(event)">6</button></td>
+                <td><button  onclick="display('*')"  onkeydown="myFunction(event)">*</button></td>
+            </tr>
+            
+            <tr>
+                <td><button onclick="display('7')"  onkeydown="myFunction(event)">7</button></td>
+                <td><button onclick="display('8')"  onkeydown="myFunction(event)">8</button></td>
+                <td><button onclick="display('9')"  onkeydown="myFunction(event)">9</button></td>
+                <td><button onclick="display('+')"  onkeydown="myFunction(event)">+</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="display('0')"  onkeydown="myFunction(event)">0</button></td>
+                <td><button onclick="solve()"  onkeydown="myFunction(event)">=</button></td>
+                <td><button onclick="display('-')"  onkeydown="myFunction(event)">-</button></td>
+                <td><button onclick="display('.')"  onkeydown="myFunction(event)">. </button></td>
+            </tr>
+    
+         </table>
+    
+
+    </div>
+    
+
+    <script>
+       var result=document.getElementById("result")
+        function display(val)
+        {
+            result.value+=val
+        }
+
+        function solve()
+        {
+            try{
+                result.value=eval(result.value);
+
+            }
+            catch(err)
+            {
+               alert("invalid keyword")
+            }
+           
+        }
+       function cl()
+       {
+        result.value="";
+       }
+
+       var tab=document.getElementById("cal")
+       cal.onkeyup=function(event)
+       {
+         if(event.keyCode === 13)
+         {
+            
+            solve();
+         }
+       }
+
+    </script>
+</body>
+</html>

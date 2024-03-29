@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+ <style>
+    body{
+        background: linear-gradient(to right,lightblue,white);
+    }
+    .tamil{
+        margin: 250px auto;
+        background-color:white;
+        width:fit-content;
+        padding:20px;
+        border-radius: 20px;
+    }
+    ol>li{
+        list-style: none;
+        margin:20px;
+        position:relative;
+        right:40px;
+
+    }
+    li>button
+    {
+        position: absolute;
+        left:150px;
+        
+
+    }
+    span{
+        background-color: green;
+        margin-left: 5px;
+    }
+    h1{
+        text-align: center;
+    }
+ </style>
+</head>
+<body>
+    <div class="tamil">
+        <h1>TODO LIST</h1>
+        <input id="input">
+        <button onclick="fun()">ADD</button>
+        <ol id="con">
+            <!-- <li>
+                <input type="checkbox" onclick="box()" id="check">
+                study
+                <button onclick="del(event)">delete</button>
+            </li> -->
+           
+        </ol>
+    </div>
+    
+<script>
+        var a=document.getElementById("input")
+       
+function fun()
+
+{
+    if(a.value=='')
+    {
+        alert("enter something")
+    }
+    else
+    {
+        var con=document.getElementById("con")
+        var c=document.createElement("li")
+        c.innerHTML=" <input type=\"checkbox\" onclick=\"box()\" id=\"check\">"+a.value+"<button onclick=\"del(event)\" >delete</button>"
+        con.append(c)
+        alert("added succesfully")
+    }
+   a.value=""   
+}
+
+function del(event)
+{
+    event.target.parentElement.remove() 
+
+}
+function box()
+{
+    var checkbox=document.getElementById("check")
+    if(checkbox.checked==true)
+    {
+       
+        alert("completed")
+    }
+    else{
+        alert("why")
+    }
+ 
+    
+}
+ </script>
+</body>
+</html>
